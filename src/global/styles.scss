@@ -1,0 +1,13 @@
+/* ABSTRACTS */
+@use "../scss/abstracts/variables";
+@use "../scss/abstracts/mixins";
+
+/* BASE */
+@use "../scss/base/base";
+@use "../scss/base/resets";
+
+/* LAYOUT */
+@use "../scss/layout/header";
+@use "../scss/layout/footer";
+@use "../scss/layout/layoutContainer";
+@use "../scss/layout/modal";

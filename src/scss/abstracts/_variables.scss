@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+//! fonts
+$font-poppins: "Poppins", "sans-serif";
+
+//! Colors
+
+// Fondos
+$background-header: #eaecec;
+$background-footer: #0f1518;
+$background-footer-copy: #011218;
+
+// Text
+$color-text-titulo: #202020;
+$color-text: #444444;
+$color-text-hover: #ffff;
+
+// Buttons
+$btn-border: 1px #aaa9a9 solid;
+$btn-background-hover: #10463e;
+$btn-text-color-hover: #fff;
+$btn-background: #fff;
+$btn-text-color: #444444;
+
+// Transition
+$transition: all 300ms ease;

@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer-container {
+  @include grid(1, 1rem);
+  background-color: $background-footer;
+  padding: 2rem 10rem;
+  font-size: 1.5rem;
+  color: #fff;
+  justify-items: start;
+
+  small {
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}

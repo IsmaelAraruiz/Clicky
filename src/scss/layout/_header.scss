@@ -1,0 +1,386 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// light
+.header-container-light {
+  @include flex(flex, row, space-between, center);
+  padding: 2rem 5rem;
+  background-color: $background-header;
+
+  .logoClicky-box {
+    @include flex(flex, row, center, center);
+    width: 20rem;
+    a {
+      img {
+        height: 8rem;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .navBar {
+    @include flex(flex, row, center, center);
+
+    ul {
+      @include flex(flex, row, center, center);
+      gap: 2rem;
+
+      li {
+        position: relative;
+        a {
+          position: relative;
+          font-size: 1.8rem;
+          color: $color-text;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 50%;
+            height: 2px;
+            background-color: black;
+            transform: translateX(-50%) scaleY(0);
+            transition: all 0.5s ease;
+          }
+
+          &:hover::after,
+          &.isActive::after {
+            transform: translateX(-50%) scaleY(1);
+          }
+        }
+
+        .btn-dropDown-toggle {
+          @include flex(flex, row, center, center);
+          font-size: 1.8rem;
+          color: $btn-text-color;
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            content: "▼";
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+          }
+
+          &.open::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        .dropDownMenu-container {
+          @include flex(flex, column, center, flex-start);
+          position: absolute;
+          top: 100%;
+          width: 20rem;
+          background-color: #fff;
+          border: 1px solid rgb(207, 207, 207);
+          border-radius: 0.2rem;
+          padding: 1rem;
+          z-index: 100;
+          gap: 1rem;
+
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(-1rem);
+          pointer-events: none;
+          transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.2s,
+            0.2s;
+
+          &.open {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.2s,
+              0.2s;
+            pointer-events: all;
+          }
+
+          li {
+            @include flex(flex, column, center, center);
+            position: relative;
+            padding-left: 2rem;
+
+            &::before {
+              content: "■";
+              position: absolute;
+              left: 0;
+              color: black;
+            }
+
+            a {
+              font-size: 1.6rem;
+              color: $color-text;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .operations-container {
+    @include flex(flex, row, space-evenly, center);
+    width: 20rem;
+
+    .section-themSwitch {
+      @include flex(flex, row, center, center);
+      height: 7rem;
+
+      .btn-themeSwitch {
+        @include flex(flex, row, center, center);
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #333333;
+        border: 1px solid #CCCCCC;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        transition:  all 300ms ease;
+
+        &:hover{
+          transform: scale(1.2);
+          rotate: 360deg;
+        }
+        
+      }
+    }
+
+    .section-cart {
+      @include flex(flex, row, center, center);
+
+      .cart-icon-box {
+        @include flex(flex, row, center, center);
+        height: 5rem;
+
+        .cart-icon {
+          position: relative;
+          @include flex(flex, row, center, center);
+          cursor: pointer;
+          transition: $transition;
+          color: black;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+
+          svg {
+            height: 4rem;
+            width: 4rem;
+            color: inherit;
+          }
+
+          p {
+            position: absolute;
+            @include flex(flex, row, center, center);
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+            background-color: #065348;
+            color: #fff;
+            top: -0.5rem;
+            right: -1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//  dark
+.header-container-dark {
+  @include flex(flex, row, space-between, center);
+  padding: 2rem 5rem;
+  background-color: #030303;
+
+  .logoClicky-box {
+    @include flex(flex, row, center, center);
+    width: 20rem;
+    a {
+      img {
+        height: 8rem;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .navBar {
+    @include flex(flex, row, center, center);
+
+    ul {
+      @include flex(flex, row, center, center);
+      gap: 2rem;
+
+      li {
+        position: relative;
+        a {
+          position: relative;
+          font-size: 1.8rem;
+          color: #fff;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 50%;
+            height: 2px;
+            background-color: #fff;
+            transform: translateX(-50%) scaleY(0);
+            transition: all 0.5s ease;
+          }
+
+          &:hover::after,
+          &.isActive::after {
+            transform: translateX(-50%) scaleY(1);
+          }
+        }
+
+        .btn-dropDown-toggle {
+          @include flex(flex, row, center, center);
+          font-size: 1.8rem;
+          color: #fff;
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            content: "▼";
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+          }
+
+          &.open::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        .dropDownMenu-container {
+          @include flex(flex, column, center, flex-start);
+          position: absolute;
+          top: 100%;
+          width: 20rem;
+          background-color: rgb(15, 17, 17);
+          border: 1px solid rgb(53, 52, 52);
+          border-radius: 0.2rem;
+          padding: 1rem;
+          z-index: 100;
+          gap: 1rem;
+
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(-1rem);
+          pointer-events: none;
+          transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.2s,
+            0.2s;
+
+          &.open {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.2s,
+              0.2s;
+            pointer-events: all;
+          }
+
+          li {
+            @include flex(flex, column, center, center);
+            position: relative;
+            padding-left: 2rem;
+
+            &::before {
+              content: "■";
+              position: absolute;
+              left: 0;
+              color: #fff;
+            }
+
+            a {
+              font-size: 1.6rem;
+              color: #fff;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .operations-container {
+    @include flex(flex, row, space-evenly, center);
+    width: 20rem;
+
+    .section-themSwitch {
+      @include flex(flex, row, center, center);
+
+      .btn-themeSwitch {
+        @include flex(flex, row, center, center);
+        cursor: pointer;
+        color: #423902;
+        background-color: #F0F0F0;
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid #CCCCCC;
+        border-radius: 50%;
+        transition: all 300ms ease;
+
+        &:hover{
+          transform: scale(1.2);
+          rotate: 360deg;
+        }
+      }
+    }
+
+    .section-cart {
+      @include flex(flex, row, center, center);
+
+      .cart-icon-box {
+        @include flex(flex, row, center, center);
+        height: 5rem;
+
+        .cart-icon {
+          position: relative;
+          @include flex(flex, row, center, center);
+          cursor: pointer;
+          transition: $transition;
+          color: #eaecec;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+
+          svg {
+            height: 4rem;
+            width: 4rem;
+            color: inherit;
+          }
+
+          p {
+            position: absolute;
+            @include flex(flex, row, center, center);
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+            background-color: #076b5c;
+            color: #fff;
+            top: -0.5rem;
+            right: -1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

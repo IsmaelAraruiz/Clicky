@@ -1,0 +1,84 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.modal-overlay {
+  @include flex(flex, row, center, flex-start);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+}
+
+.modal-content {
+  margin-top: 10rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 40rem;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  outline: none;
+
+  .modal-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  .form-modal {
+    @include flex(flex, column, center, center);
+    gap: 1rem;
+    width: 100%;
+
+    .input-field {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 35rem;
+
+      &:focus {
+        border-color: #03c9c9;
+      }
+    }
+
+    .btn-submit {
+      padding: 0.8rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      background-color: #096868;
+      color: #fff;
+      transition: background-color 0.3s;
+      width: 35rem;
+
+      &:hover {
+        background-color: #09f0d1;
+        color: black;
+      }
+    }
+
+    .btn-cancel {
+      padding: 0.8rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      background-color: #f44336;
+      color: #fff;
+      transition: background-color 0.3s;
+      width: 35rem;
+
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+  }
+}

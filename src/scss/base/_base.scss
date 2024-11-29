@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html,
+body {
+  font-family: $font-poppins;
+}
+
+
